@@ -4,7 +4,7 @@
       單張打api形式：
       <button @click="handle_simgle_picture()">點我看圖</button>
       <ImageLoader
-        :show.sync="image_show"
+        :show.sync="simgle_image_show"
         :images="images"
         :title="image_title"
         :right_button="image_right_button"
@@ -15,6 +15,14 @@
     <div>
       一次給多張圖片形式：
       <button @click="handle_multiple_picture()">點我看圖</button>
+      <ImageLoader
+        :show.sync="multiple_image_show"
+        :images="images"
+        :title="image_title"
+        :right_button="image_right_button"
+        :left_button="image_left_button"
+        @click_button="handle_arrow_button"
+      />
     </div>
   </div>
 </template>
@@ -31,7 +39,8 @@ export default {
     return {
       images: null,
       image_title: null,
-      image_show: false,
+      simgle_image_show: false,
+      multiple_image_show: false,
       image_current_digital_id: null,
       image_current_level: null,
       image_current_metadata_id: null,
@@ -50,10 +59,10 @@ export default {
 
     },
     handle_simgle_picture () {
-      this.image_show = true
+      this.simgle_image_show = true
     },
     handle_multiple_picture () {
-
+      this.multiple_image_show = true
     },
     async handle_arrow_button (val) {
       console.log(val)
