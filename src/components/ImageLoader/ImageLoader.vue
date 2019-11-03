@@ -3,18 +3,18 @@
     <div class="image-content">
       <div class="image-title">{{title}}</div>
       <div class="image-button image-close" @click="handle_close">
-        <i class="el-icon-download"></i>
+        <!-- <i class="fas fa-times"></i> -->
       </div>
       <div>
         <span v-if="left_button === true" class="arrow-left" @click="handle_arrow_button('left')"><i class="el-icon-caret-left"></i></span>
-        <div class="img-box"><img  :src="images" alt="" :style="imageStyle"></div>
+        <div class="img-box"><img :src="images" alt="" :style="imageStyle"></div>
         <span v-if="right_button ===  true" class="arrow-right" @click="handle_arrow_button('right')"><i class="el-icon-caret-right"></i></span>
       </div>
       <div class="image-tool">
-        <span class="image-tool-button" @click="handle_tool_button('zoom-in')"><i class="el-icon-zoom-in"></i></span>
-        <span class="image-tool-button" @click="handle_tool_button('zoom-out')"><i class="el-icon-zoom-out"></i></span>
-        <span class="image-tool-button" @click="handle_tool_button('rotate-left')"><i class="el-icon-refresh-left"></i></span>
-        <span class="image-tool-button" @click="handle_tool_button('rotate-right')"><i class="el-icon-refresh-right"></i></span>
+        <span class="image-tool-button" @click="handle_tool_button('zoom-in')"><i class="fas fa-search-minus"></i></span>
+        <span class="image-tool-button" @click="handle_tool_button('zoom-out')"><i class="fas fa-search-plus"></i></span>
+        <span class="image-tool-button" @click="handle_tool_button('rotate-left')"><i class="fas fa-undo-alt"></i></span>
+        <span class="image-tool-button" @click="handle_tool_button('rotate-right')"><i class="fas fa-redo-alt"></i></span>
       </div>
     </div>
   </div>
