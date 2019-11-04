@@ -11,8 +11,8 @@
         <span v-if="right_button ===  true" class="arrow-right" @click="handle_arrow_button('right')"><i class="el-icon-caret-right"></i></span>
       </div>
       <div class="image-tool">
-        <span class="image-tool-button" @click="handle_tool_button('zoom-in')"><i class="fas fa-search-minus"></i></span>
-        <span class="image-tool-button" @click="handle_tool_button('zoom-out')"><i class="fas fa-search-plus"></i></span>
+        <span class="image-tool-button" @click="handle_tool_button('zoom-in')"><i class="fas fa-search-plus"></i></span>
+        <span class="image-tool-button" @click="handle_tool_button('zoom-out')"><i class="fas fa-search-minus"></i></span>
         <span class="image-tool-button" @click="handle_tool_button('rotate-left')"><i class="fas fa-undo-alt"></i></span>
         <span class="image-tool-button" @click="handle_tool_button('rotate-right')"><i class="fas fa-redo-alt"></i></span>
       </div>

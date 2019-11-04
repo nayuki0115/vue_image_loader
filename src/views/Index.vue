@@ -54,6 +54,10 @@ export default {
       image_right_button: false
     }
   },
+  created () {
+    // temp
+    this.images = 'https://images.pexels.com/photos/3114350/pexels-photo-3114350.jpeg'
+  },
   methods: {
     async init () {
 
