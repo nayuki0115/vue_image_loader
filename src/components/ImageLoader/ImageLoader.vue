@@ -1,12 +1,11 @@
 <template>
   <div class="image-wrapper" v-if="syncShow">
-    <i class="fas fa-search-plus"></i>
     <div class="imgage-content">
       <div class="image-title" v-if="images[imageIndex]['imgTitle']  && images[imageIndex]['imgTitle'] !== ''">{{images[imageIndex]['imgTitle'] }}</div>
       <div class="image-button image-close" @click="handleClose"></div>
       <div>
         <span></span>
-        <div class="img-box" v-if="images[imageIndex]['imgUrl']  && images[imageIndex]['imgUrl'] !== ''"><img :src="images[imageIndex]['imgUrl']" alt="" ></div>
+        <div class="img-box" v-if="images[imageIndex]['imgUrl']  && images[imageIndex]['imgUrl'] !== ''"><pinch-zoom><img :src="images[imageIndex]['imgUrl']" alt="" ></pinch-zoom></div>
         <span></span>
       </div>
     </div>
@@ -14,6 +13,7 @@
 </template>
 
 <script>
+import PinchZoom from 'vue-pinch-zoom'
 export default {
   props: {
     'show': {
@@ -24,6 +24,9 @@ export default {
       type: Array,
       required: true
     }
+  },
+  components: {
+    PinchZoom
   },
   data () {
     return {
@@ -137,21 +140,7 @@ export default {
   }
 
   .img-box {
-    text-align: center;
-    height: 95vh;
-    overflow: auto;
-    padding: 50px 0;
-    box-sizing: border-box;
-    &:before {
-      content:'';
-      display: inline-block;
-      vertical-align: middle;
-      width: 0;
-      height: 100%;
-    }
-    img {
-      // max-width: 100%;
-      vertical-align: middle;
-    }
+    max-width: 100vw !important;
+    max-height: 100vh !important;
   }
 </style>
